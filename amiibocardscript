@@ -1,0 +1,73 @@
+#!/bin/bash
+
+# Constants for an A4 page (210x297 mm)
+PAGE_WIDTH_MM=210
+PAGE_HEIGHT_MM=297
+
+# Margin in mm
+MARGIN_MM=10
+
+# Image dimensions in mm
+IMG_WIDTH_MM=54.4
+IMG_HEIGHT_MM=85.5
+
+# Convert the dimensions to pixels at 300 DPI
+convert_mm_to_px() {
+  echo $(echo "$1 * 300 / 25.4" | bc | cut -d '.' -f 1)
+}
+
+PAGE_WIDTH_PX=$(convert_mm_to_px $PAGE_WIDTH_MM)
+PAGE_HEIGHT_PX=$(convert_mm_to_px $PAGE_HEIGHT_MM)
+MARGIN_PX=$(convert_mm_to_px $MARGIN_MM)
+IMG_WIDTH_PX=$(convert_mm_to_px $IMG_WIDTH_MM)
+IMG_HEIGHT_PX=$(convert_mm_to_px $IMG_HEIGHT_MM)
+
+# Ask the user for orientation
+orientation=$(zenity --list --title="Image Orientation" --text="Choose the orientation of the images:" --radiolist --column="Select" --column="Orientation" TRUE "Horizontal" FALSE "Vertical")
+
+if [ "$orientation" == "Horizontal" ]; then
+  orientation="h"
+else
+  orientation="v"
+fi
+
+# Create a blank A4 canvas with a white background
+convert -size ${PAGE_WIDTH_PX}x${PAGE_HEIGHT_PX} xc:white canvas.png
+
+# Show a progress bar
+{
+  # Loop through the images and place them on the canvas with the specified margin, stretching to fit
+  for row in {0..2}; do
+    for col in {0..2}; do
+      idx=$(($row * 3 + $col + 1))
+      x=$(($col * $IMG_WIDTH_PX + $MARGIN_PX))
+      y=$(($row * $IMG_HEIGHT_PX + $MARGIN_PX))
+
+      # Rotate the image if horizontal
+      if [ "$orientation" == "h" ]; then
+        convert "image$idx.png" -rotate 90 "rotated$idx.png"
+        convert "rotated$idx.png" -resize ${IMG_WIDTH_PX}x${IMG_HEIGHT_PX}\! \
+          "resized$idx.png"
+        rm "rotated$idx.png"
+      else
+        convert "image$idx.png" -resize ${IMG_WIDTH_PX}x${IMG_HEIGHT_PX}\! \
+          "resized$idx.png"
+      fi
+
+      composite -geometry +${x}+${y} "resized$idx.png" canvas.png canvas.png
+
+      # Update progress
+      echo $(($idx * 100 / 9))
+    done
+  done
+
+  # Convert the final canvas to PDF with 300 DPI
+  convert -density 300 canvas.png output.pdf
+
+  # Cleanup temporary images
+  rm resized*.png
+  rm canvas.png
+
+} | zenity --progress --percentage=0 --auto-close --title="Creating PDF" --text="Processing images..."
+
+zenity --info --text="PDF created as output.pdf"
