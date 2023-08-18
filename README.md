@@ -1,64 +1,87 @@
-# PDF Generator for Animal Crossing
+# Animal Crossing Card Generator
 
-A script to generate a PDF from images, tailored to work with Animal Crossing. This guide will help you install and use the script on different operating systems.
+Ce projet contient deux applications Python pour créer des cartes Animal Crossing prêtes à imprimer en PDF. Il comprend `amiibolife.py` pour télécharger et sélectionner des images et `pdfgtkg.py` pour générer le fichier PDF final.
 
-## Installation Guide
+## Installation
 
-### Requirements:
-- Python 3.x
-- PIL (Pillow)
-- GdkPixbuf
-- ImageMagick
-- GTK+3
+### Windows
 
-### Windows:
-1. **Install Python 3.x**: Download the latest version from [Python's official website](https://www.python.org/downloads/).
-2. **Install GTK+3**: Follow the instructions on the [GTK download page](https://www.gtk.org/docs/installations/windows/).
-3. **Install ImageMagick**: Download and install from [ImageMagick's website](https://imagemagick.org/script/download.php#windows).
-4. **Install Python Dependencies**: Open Command Prompt and run:
-    ```bash
-    pip install Pillow
-    pip install PyGObject
-    ```
+1. Installez Python depuis [le site officiel](https://www.python.org/downloads/).
+2. Installez GTK 3 depuis [ce lien](https://www.gtk.org/docs/installations/windows/).
+3. Installez les dépendances Python avec la commande suivante:
 
-### macOS:
-1. **Install Python 3.x**: Download the latest version from [Python's official website](https://www.python.org/downloads/).
-2. **Install GTK+3**: Use [Homebrew](https://brew.sh/):
-    ```bash
-    brew install gtk+3
-    ```
-3. **Install ImageMagick**: Use Homebrew:
-    ```bash
-    brew install imagemagick
-    ```
-4. **Install Python Dependencies**: Open Terminal and run:
-    ```bash
-    pip3 install Pillow
-    pip3 install PyGObject
-    ```
+```bash
+pip install requests pillow PyGObject
+```
 
-### Linux (Ubuntu/Debian):
-1. **Install Python 3.x**: Python 3 is likely pre-installed. You can check the version by running `python3 --version`.
-2. **Install GTK+3, ImageMagick, and GdkPixbuf**: Open Terminal and run:
-    ```bash
-    sudo apt-get install python3-gi gir1.2-gtk-3.0 imagemagick
-    ```
-3. **Install Python Dependencies**: Run:
-    ```bash
-    pip3 install Pillow
-    ```
+### Ubuntu/Fedora
 
-## Usage Guide:
-1. **Run the Script**: Navigate to the directory where the script is located and run:
-   - **Windows**: `python pdfgtkg.py`
-   - **macOS/Linux**: `python3 pdfgtkg.py`
-2. **Select a Folder**: Click the folder button and select the directory containing the images.
-3. **Select Image Orientation**: Choose the desired orientation for the images (Vertical or Horizontal).
-4. **Preview the Images**: Click the "Preview" button to see a preview of the PDF layout.
-5. **Generate PDF**: Click the "Generate PDF" button. The PDF will be created in the selected folder.
+1. Installez Python et GTK 3 avec:
 
-## Notes:
-- Make sure the images are named as "image1.png", "image2.png", etc., and are placed in the selected folder.
+```bash
+sudo apt-get install python3 python3-gi python3-gi-cairo gir1.2-gtk-3.0 # Ubuntu
+sudo dnf install python3 gtk3 python3-gobject python-pillow # Fedora
+```
 
-## License:
-- Add license information if applicable.
+2. Installez les dépendances Python:
+
+```bash
+pip3 install requests
+```
+
+### Arch
+
+1. Installez Python et GTK 3 avec:
+
+```bash
+sudo pacman -S python-gobject python-pillow gtk3
+```
+
+2. Installez les dépendances Python:
+
+```bash
+pip install requests
+```
+
+### MacOS
+
+1. Installez Homebrew si vous ne l'avez pas:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+2. Installez Python et GTK:
+
+```bash
+brew install python gtk+3 pygobject3
+```
+
+3. Installez les dépendances Python:
+
+```bash
+pip install requests pillow
+```
+
+## Utilisation
+
+1. **Téléchargement et Sélection des Images**: Exécutez `amiibolife.py` pour télécharger et sélectionner jusqu'à 9 images.
+
+```bash
+python amiibolife.py
+```
+
+Sélectionnez les images en cliquant dessus et cliquez sur le bouton de téléchargement lorsqu'elles sont prêtes.
+
+2. **Création du PDF**: Exécutez `pdfgtkg.py` pour ouvrir l'interface de création de PDF.
+
+```bash
+python pdfgtkg.py
+```
+
+Sélectionnez le dossier contenant les images téléchargées, choisissez l'orientation, prévisualisez et générez le PDF.
+
+## Licence
+
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+```
