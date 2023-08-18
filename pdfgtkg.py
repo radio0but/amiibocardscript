@@ -62,7 +62,7 @@ class PDFGeneratorApp:
         margin_px = int(MARGIN_MM * conversion_factor)
 
         # Create blank canvas
-        cmd = f"convert -size {page_width_px}x{page_height_px} xc:white {output_path}"
+        cmd = f'convert -size {page_width_px}x{page_height_px} xc:white "{output_path}"'
         subprocess.run(cmd, shell=True)
 
         # Loop through the images and place them on the canvas
@@ -76,10 +76,11 @@ class PDFGeneratorApp:
                 if self.horizontal_button.get_active():
                     img = img.rotate(90, expand=True)
                 img = img.resize((img_width_px, img_height_px))
-                img.save(f"resized{idx}.png")
-                cmd = f"composite -geometry +{x}+{y} resized{idx}.png {output_path} {output_path}"
+                resized_path = f'resized{idx}.png'
+                img.save(resized_path)
+                cmd = f'composite -geometry +{x}+{y} "{resized_path}" "{output_path}" "{output_path}"'
                 subprocess.run(cmd, shell=True)
-                os.remove(f"resized{idx}.png")
+                os.remove(resized_path)
                 GLib.idle_add(self.update_progress_bar, (idx + 1) / 9)
 
         dialog = Gtk.MessageDialog(
