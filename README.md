@@ -1,6 +1,6 @@
 # Animal Crossing Card Generator
 
-Ce projet contient deux applications Python pour créer des cartes Animal Crossing prêtes à imprimer en PDF. Il comprend `AnimalCrossingCardsDownloader.py` pour télécharger et sélectionner des images et `AnimalCrossingCardsPrintPrep.py` pour générer le fichier PDF final. Ce projet utilise AmiiboAPI pour les donnees 
+Ce projet contient deux applications Python pour créer des cartes Animal Crossing prêtes à imprimer en PDF. Il comprend `AnimalCrossingCardsDownloader.py` pour télécharger et sélectionner des images et `AnimalCrossingCardsPrintPrep.py` pour générer le fichier PDF final. Ce projet utilise AmiiboAPI pour les donnees. Le AnimalCrossingCardsPrintPrep.py est specifiquement calibre pour les cartes nfc 5,44cm x 8,55cm teste sur une imprimante HP DeskJet 3630. 
 
 ## Installation
 
