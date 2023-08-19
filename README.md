@@ -1,6 +1,6 @@
 # Animal Crossing Card Generator
 
-Ce projet contient deux applications Python pour créer des cartes Animal Crossing prêtes à imprimer en PDF. Il comprend `amiibolife.py` pour télécharger et sélectionner des images et `pdfgtkg.py` pour générer le fichier PDF final. Ce projet utilise AmiiboAPI pour les donnees 
+Ce projet contient deux applications Python pour créer des cartes Animal Crossing prêtes à imprimer en PDF. Il comprend `AnimalCrossingCardsDownloader.py` pour télécharger et sélectionner des images et `AnimalCrossingCardsPrintPrep.py` pour générer le fichier PDF final. Ce projet utilise AmiiboAPI pour les donnees 
 
 ## Installation
 
@@ -65,18 +65,18 @@ pip install requests pillow
 
 ## Utilisation
 
-1. **Téléchargement et Sélection des Images**: Exécutez `amiibolife.py` pour télécharger et sélectionner 9 images.
+1. **Téléchargement et Sélection des Images**: Exécutez `AnimalCrossingCardsDownloader.py` pour télécharger et sélectionner 9 images.
 
 ```bash
-python amiibolife.py
+python AnimalCrossingCardsDownloader.py
 ```
 
 Sélectionnez les images en cliquant dessus et cliquez sur le bouton de téléchargement lorsqu'elles sont prêtes.
 
-2. **Création du PDF**: Exécutez `pdfgtkg.py` pour ouvrir l'interface de création de PDF.
+2. **Création du PDF**: Exécutez `AnimalCrossingCardsPrintPrep.py` pour ouvrir l'interface de création de PDF.
 
 ```bash
-python pdfgtkg.py
+python AnimalCrossingCardsPrintPrep.py
 ```
 
 Sélectionnez le dossier contenant les images téléchargées, choisissez l'orientation, prévisualisez et générez le PDF.
