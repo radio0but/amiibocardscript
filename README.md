@@ -65,23 +65,20 @@ pip install requests pillow
 
 ## Utilisation
 
-1. **Téléchargement et Sélection des Images**: Exécutez `AnimalCrossingCardsDownloader.py` pour télécharger et sélectionner 9 images.
+1. **Téléchargement et Sélection des Images**: Exécutez `AmiiboCardsDownloader.py` pour télécharger et sélectionner 9 images.
 
 ```bash
-python AnimalCrossingCardsDownloader.py
+python AmiiboCardsDownloader.py
 ```
 
-Sélectionnez les images en cliquant dessus et cliquez sur le bouton de téléchargement lorsqu'elles sont prêtes.
+Sélectionnez 9 images en cliquant dessus et cliquez sur le bouton de téléchargement lorsqu'elles sont choisi. vous pouvez les trouvez plus rapide en filtran par Série ou par nom avec la barre de recherche. L'application est encore instable il y a beaucoup d'amiibo à charger
 
-2. **Création du PDF**: Exécutez `AnimalCrossingCardsPrintPrep.py` pour ouvrir l'interface de création de PDF.
+2. **Création du PDF**: Exécutez `AmiiboCardsPrintPrep.py` pour ouvrir l'interface de création de PDF.
 
 ```bash
-python AnimalCrossingCardsPrintPrep.py
+python AmiiboCardsPrintPrep.py
 ```
 
-Sélectionnez le dossier contenant les images téléchargées, choisissez l'orientation, prévisualisez et générez le PDF.
+Choisissez l'orientation, prévisualisez et générez le PDF les images seront étiré pour remplir la carte.Si vous n'avez pas utilisé AmiiboCardsDownloader.py et que vous avez téléchargé les images manuelement vous pouvez sélectionner le dossier qui les contient assurez vous d'avoir nommé les images image1.png, image2.png...
 
-## Licence
 
-Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
-```
