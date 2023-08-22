@@ -1,6 +1,6 @@
 # Amiibo Card Generator Suite
 
-This project contains two Python applications for creating ready-to-print Animal Crossing PDF cards. It includes `AnimalCrossingCardsDownloader.py` for downloading and selecting images and `AnimalCrossingCardsPrintPrep.py` for generating the final PDF file. This project uses AmiiboAPI for data. The AnimalCrossingCardsPrintPrep.py is specifically calibrated for NFC cards 5.44cm x 8.55cm tested on an HP DeskJet 3630 printer.
+This project contains two Python applications for creating ready-to-print PDFs of Amiibo cards. It includes `AmiiboCardsDownloader.py` for downloading and selecting images and `AmiiboCardsPrintPrep.py` for generating the final PDF file. This project uses AmiiboAPI for data. The AmiiboCardsPrintPrep.py is specifically calibrated for NFC cards 5.44cm x 8.55cm tested on an HP DeskJet 3630 printer.
 
 ## Installation
 
