@@ -1,43 +1,41 @@
 # Amiibo Card Generator Suite
 
-Ce projet contient deux applications Python pour créer des cartes Animal Crossing prêtes à imprimer en PDF. Il comprend `AnimalCrossingCardsDownloader.py` pour télécharger et sélectionner des images et `AnimalCrossingCardsPrintPrep.py` pour générer le fichier PDF final. Ce projet utilise AmiiboAPI pour les donnees. Le AnimalCrossingCardsPrintPrep.py est specifiquement calibre pour les cartes nfc 5,44cm x 8,55cm teste sur une imprimante HP DeskJet 3630. 
+This project contains two Python applications for creating ready-to-print Animal Crossing PDF cards. It includes `AnimalCrossingCardsDownloader.py` for downloading and selecting images and `AnimalCrossingCardsPrintPrep.py` for generating the final PDF file. This project uses AmiiboAPI for data. The AnimalCrossingCardsPrintPrep.py is specifically calibrated for NFC cards 5.44cm x 8.55cm tested on an HP DeskJet 3630 printer.
 
 ## Installation
 
 ### Windows
 
-1. Installez Python depuis [le site officiel](https://www.python.org/downloads/).
-2. Installez GTK 3 depuis [ce lien](https://www.gtk.org/docs/installations/windows/).
-3. Installez les dépendances Python avec la commande suivante:
+1. Install Python from [the official website](https://www.python.org/downloads/).
+2. Install GTK 3 from [this link](https://www.gtk.org/docs/installations/windows/).
+3. Install Python dependencies with the following command:
 
 ```bash
 pip install requests pillow PyGObject
 ```
-
 ### Ubuntu/Fedora
 
-1. Installez Python et GTK 3 avec:
+1. Install Python and GTK 3 with:
 
 ```bash
 sudo apt-get install python3 python3-gi python3-gi-cairo gir1.2-gtk-3.0 # Ubuntu
 sudo dnf install python3 gtk3 python3-gobject python-pillow # Fedora
 ```
 
-2. Installez les dépendances Python:
+2. Install Python dependencies:
 
 ```bash
 pip3 install requests
 ```
-
 ### Arch
 
-1. Installez Python et GTK 3 avec:
+1. Install Python and GTK 3 with:
 
 ```bash
 sudo pacman -S python-gobject python-pillow gtk3
 ```
 
-2. Installez les dépendances Python:
+2. Install Python dependencies:
 
 ```bash
 pip install requests
@@ -45,40 +43,37 @@ pip install requests
 
 ### MacOS
 
-1. Installez Homebrew si vous ne l'avez pas:
+1. Install Homebrew if you don't have it:
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-2. Installez Python et GTK:
+2. Install Python and GTK:
 
 ```bash
 brew install python gtk+3 pygobject3
 ```
 
-3. Installez les dépendances Python:
+3. Install Python dependencies:
 
 ```bash
 pip install requests pillow
 ```
+## Usage
 
-## Utilisation
-
-1. **Téléchargement et Sélection des Images**: Exécutez `AmiiboCardsDownloader.py` pour télécharger et sélectionner 9 images.
+1. **Downloading and Selecting Images**: Run `AmiiboCardsDownloader.py` to download and select 9 images.
 
 ```bash
 python AmiiboCardsDownloader.py
 ```
 
-Sélectionnez 9 images en cliquant dessus et cliquez sur le bouton de téléchargement lorsqu'elles sont choisi. vous pouvez les trouvez plus rapide en filtran par Série ou par nom avec la barre de recherche. L'application est encore instable il y a beaucoup d'amiibo à charger
+Select 9 images by clicking on them and click the download button when they are chosen. You can find them more quickly by filtering by Series or by name using the search bar. The application is still unstable as there are many amiibo to load. The filter function cannot filter the images until everything is downloaded.
 
-2. **Création du PDF**: Exécutez `AmiiboCardsPrintPrep.py` pour ouvrir l'interface de création de PDF.
+2. **PDF Creation**: Run `AmiiboCardsPrintPrep.py` to open the PDF creation interface.
 
 ```bash
 python AmiiboCardsPrintPrep.py
 ```
 
-Choisissez l'orientation, prévisualisez et générez le PDF les images seront étiré pour remplir la carte.Si vous n'avez pas utilisé AmiiboCardsDownloader.py et que vous avez téléchargé les images manuelement vous pouvez sélectionner le dossier qui les contient assurez vous d'avoir nommé les images image1.png, image2.png...
-
-
+Choose the orientation, preview, and generate the PDF; the images will be stretched to fill the card. If you did not use AmiiboCardsDownloader.py and downloaded the images manually, you can select the folder containing them. Ensure you have named the images as image1.png, image2.png, etc.
