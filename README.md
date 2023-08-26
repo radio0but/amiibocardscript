@@ -2,10 +2,13 @@
 
 This project contains two Python applications for creating ready-to-print PDFs of Amiibo cards. It includes `AmiiboCardsDownloader.py` for downloading and selecting images and `AmiiboCardsPrintPrep.py` for generating the final PDF file. This project uses AmiiboAPI for data. The AmiiboCardsPrintPrep.py is specifically calibrated for NFC cards 5.44cm x 8.55cm tested on an HP DeskJet 3630 printer.
 
+Linux users can now use the install script in the release section
+
 ![Alt text](https://imgur.com/LImBoSo.png "a title")
 ![Alt text](https://imgur.com/kKbns51.png "a title")
 
-#I made a QT version for windows users available in the release section
+#I made a QT version for windows users available in the release section as windows installer. 
+Make sure you have python 3 installed and configured in the path environement variable as python.exe
 ![Alt text](https://imgur.com/SDKrO3Q.png "a title")
 
 Linux users can now use the install script in the release section
@@ -14,9 +17,13 @@ Linux users can now use the install script in the release section
 
 ### Windows
 
+these instruction are for executing the GTK version on windows for advance user only otherwize use the Qt version. 
+
 1. Install Python from [the official website](https://www.python.org/downloads/).
 2. Install GTK 3 from [this link](https://www.gtk.org/docs/installations/windows/).
 3. Install Python dependencies with the following command:
+
+You might also be able to use WSL
 
 ```bash
 pip install requests pillow PyGObject
