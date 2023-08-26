@@ -1,10 +1,10 @@
 import os
 import subprocess
 from PIL import Image
-from PySide6.QtWidgets import (QApplication, QMainWindow, QVBoxLayout, QFileDialog, QRadioButton,
-                               QPushButton, QLabel, QProgressBar, QMessageBox, QWidget)
+from PySide6.QtWidgets import (QApplication, QMainWindow, QFileDialog, QMessageBox)
 from PySide6.QtGui import QPixmap
 from PySide6.QtCore import Qt, QThread, Signal
+from PySide6.QtUiTools import QUiLoader
 from io import BytesIO
 
 # Constants
@@ -18,7 +18,6 @@ PREVIEW_SCALE = 0.15
 WIDTH_ADJUSTMENT = 5.44 / 5.285
 HEIGHT_ADJUSTMENT = 8.55 / 8.295
 
-
 class PDFGeneratorThread(QThread):
     progress_updated = Signal(float)
     pdf_created = Signal(str)
@@ -30,8 +29,6 @@ class PDFGeneratorThread(QThread):
 
     def run(self):
         output_path = os.path.join(self.folder_path, "output.pdf")
-
-        # Conversion factors and dimensions
         conversion_factor = 300 / 25.4
         page_width_px = int(PAGE_WIDTH_MM * conversion_factor)
         page_height_px = int(PAGE_HEIGHT_MM * conversion_factor)
@@ -39,11 +36,9 @@ class PDFGeneratorThread(QThread):
         img_height_px = int(IMG_HEIGHT_MM * conversion_factor * HEIGHT_ADJUSTMENT)
         margin_px = int(MARGIN_MM * conversion_factor)
 
-        # Create blank canvas
         cmd = f'convert -size {page_width_px}x{page_height_px} xc:white "{output_path}"'
         subprocess.run(cmd, shell=True)
 
-        # Loop through the images and place them on the canvas
         for row in range(3):
             for col in range(3):
                 idx = row * 3 + col
@@ -63,42 +58,22 @@ class PDFGeneratorThread(QThread):
 
         self.pdf_created.emit(output_path)
 
-
 class PDFGeneratorApp(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        # Create widgets and layout
-        layout = QVBoxLayout()
-        self.folder_button = QPushButton("Select Folder")
-        self.vertical_button = QRadioButton("Vertical")
-        self.horizontal_button = QRadioButton("Horizontal")
-        self.preview_button = QPushButton("Preview")
-        self.preview_label = QLabel()
-        self.process_button = QPushButton("Generate PDF")
-        self.loading_bar = QProgressBar()
+        loader = QUiLoader()
+        self.ui = loader.load("PDFGeneratorUI.ui", self)
+        self.setCentralWidget(self.ui.centralwidget)
 
-        # Set default folder
         self.default_folder = os.path.join(os.path.dirname(os.path.realpath(__file__)), "amiibo")
         if not os.path.exists(self.default_folder):
             os.makedirs(self.default_folder)
 
-        self.folder_button.clicked.connect(self.select_folder)
-        self.preview_button.clicked.connect(self.preview_images)
-        self.process_button.clicked.connect(self.generate_pdf)
-        self.vertical_button.setChecked(True)
-
-        layout.addWidget(self.folder_button)
-        layout.addWidget(self.vertical_button)
-        layout.addWidget(self.horizontal_button)
-        layout.addWidget(self.preview_button)
-        layout.addWidget(self.preview_label)
-        layout.addWidget(self.process_button)
-        layout.addWidget(self.loading_bar)
-
-        main_widget = QWidget()
-        main_widget.setLayout(layout)
-        self.setCentralWidget(main_widget)
+        self.ui.folder_button.clicked.connect(self.select_folder)
+        self.ui.preview_button.clicked.connect(self.preview_images)
+        self.ui.process_button.clicked.connect(self.generate_pdf)
+        self.ui.vertical_button.setChecked(True)
 
     def select_folder(self):
         folder_path = QFileDialog.getExistingDirectory(self, "Select Folder", self.default_folder)
@@ -109,14 +84,14 @@ class PDFGeneratorApp(QMainWindow):
         self.update_preview(self.default_folder)
 
     def generate_pdf(self):
-        self.loading_bar.setValue(0)
-        self.thread = PDFGeneratorThread(self.default_folder, self.horizontal_button.isChecked())
+        self.ui.loading_bar.setValue(0)
+        self.thread = PDFGeneratorThread(self.default_folder, self.ui.horizontal_button.isChecked())
         self.thread.progress_updated.connect(self.update_progress_bar)
         self.thread.pdf_created.connect(self.show_pdf_created_dialog)
         self.thread.start()
 
     def update_progress_bar(self, fraction):
-        self.loading_bar.setValue(int(fraction * 100))
+        self.ui.loading_bar.setValue(int(fraction * 100))
 
     def show_pdf_created_dialog(self, output_path):
         dialog = QMessageBox(self)
@@ -132,41 +107,29 @@ class PDFGeneratorApp(QMainWindow):
         page_height_px = int(PAGE_HEIGHT_MM * conversion_factor * PREVIEW_SCALE)
         preview_img = Image.new('RGB', (page_width_px, page_height_px), color='white')
 
-        # Calculate space available for images
-        available_width_mm = PAGE_WIDTH_MM - 2 * MARGIN_MM
-        available_height_mm = PAGE_HEIGHT_MM - 2 * MARGIN_MM
+        img_width_px = int(IMG_WIDTH_MM * conversion_factor * PREVIEW_SCALE)
+        img_height_px = int(IMG_HEIGHT_MM * conversion_factor * PREVIEW_SCALE)
 
-        # Calculate image size based on available space
-        img_width_mm = available_width_mm / 3
-        img_height_mm = available_height_mm / 3
-
-        # Loop through the images and place them on the canvas
         for row in range(3):
             for col in range(3):
                 idx = row * 3 + col
-                x = col * int(img_width_mm * conversion_factor * PREVIEW_SCALE * WIDTH_ADJUSTMENT) + int(MARGIN_MM * conversion_factor * PREVIEW_SCALE)
-                y = row * int(img_height_mm * conversion_factor * PREVIEW_SCALE * HEIGHT_ADJUSTMENT) + int(MARGIN_MM * conversion_factor * PREVIEW_SCALE)
                 image_path = os.path.join(folder_path, f"image{idx + 1}.png")
                 img = Image.open(image_path)
-                if self.horizontal_button.isChecked():
+                if self.ui.horizontal_button.isChecked():
                     img = img.rotate(90, expand=True)
-                img = img.resize((int(img_width_mm * conversion_factor * PREVIEW_SCALE * WIDTH_ADJUSTMENT),
-                                  int(img_height_mm * conversion_factor * PREVIEW_SCALE * HEIGHT_ADJUSTMENT)))
+                x = col * img_width_px
+                y = row * img_height_px
+                img = img.resize((img_width_px, img_height_px))
                 preview_img.paste(img, (x, y))
 
-        # Convert the Image object to a QPixmap
-        buf = BytesIO()
-        preview_img.save(buf, format='png')
-        buf.seek(0)
-        pixmap = QPixmap()
-        pixmap.loadFromData(buf.read())
-
-        # Update the preview label
-        self.preview_label.setPixmap(pixmap)
-
+        preview_buffer = BytesIO()
+        preview_img.save(preview_buffer, format="PNG")
+        qt_image = QPixmap()
+        qt_image.loadFromData(preview_buffer.getvalue())
+        self.ui.preview_label.setPixmap(qt_image)
 
 if __name__ == "__main__":
-    app = QApplication()
+    app = QApplication([])
     window = PDFGeneratorApp()
     window.show()
     app.exec_()

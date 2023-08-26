@@ -1,34 +1,21 @@
 import subprocess
 import os
-from PySide6.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QPushButton, QLabel, QMessageBox, QWidget
+from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
+from PySide6.QtUiTools import QUiLoader
 
 class MyWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        # Create widgets and layout
-        layout = QVBoxLayout()
-        self.download_button = QPushButton("Download Amiibo Cards")
-        self.printprep_button = QPushButton("Prepare Amiibo Cards for Print")
-        self.print_button = QPushButton("Print Amiibo Cards")
+        # Load UI from .ui file
+        loader = QUiLoader()
+        self.ui = loader.load("start.ui", self)
+        self.setCentralWidget(self.ui.centralwidget)
 
-        # Connect download button
-        self.download_button.clicked.connect(self.on_downloader_button_clicked)
-
-        # Connect print preparation button
-        self.printprep_button.clicked.connect(self.on_printprep_button_clicked)
-
-        # Connect print button
-        self.print_button.clicked.connect(self.on_print_button_clicked)
-
-        layout.addWidget(self.download_button)
-        layout.addWidget(self.printprep_button)
-        layout.addWidget(self.print_button)
-
-        main_widget = QWidget()
-        main_widget.setLayout(layout)
-        self.setCentralWidget(main_widget)
-        self.show()
+        # Connect buttons to functions
+        self.ui.download_button.clicked.connect(self.on_downloader_button_clicked)
+        self.ui.printprep_button.clicked.connect(self.on_printprep_button_clicked)
+        self.ui.print_button.clicked.connect(self.on_print_button_clicked)
 
     def on_downloader_button_clicked(self):
         subprocess.Popen(["python", "AmiiboCardsDownloader.py"])
@@ -51,5 +38,5 @@ class MyWindow(QMainWindow):
 if __name__ == "__main__":
     app = QApplication()
     window = MyWindow()
+    window.show()
     app.exec_()
-

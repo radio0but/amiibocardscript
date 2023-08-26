@@ -24,7 +24,7 @@ Section "Main Program"
     SetOutPath "$INSTDIR"
 
     ; Include your files here
-    File /r "J:\home\uldarik\AmiiboNFC\WindowsQT\*.*"
+    File /r "C:\Users\uldarik\Documents\WindowsQT\*.*"
 
     ; Create a shortcut on the desktop
     CreateShortCut "$DESKTOP\Amiibo Card Generator Suite.lnk" "$INSTDIR\launcher.exe"

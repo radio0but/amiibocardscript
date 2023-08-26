@@ -88,10 +88,10 @@ class AmiiboApp(QMainWindow):
         main_widget.setLayout(main_layout)
         self.setCentralWidget(main_widget)
 
-        self.load_images()
+        self.load_amiibo_series()
         self.signal_add_thumbnail.connect(self.add_thumbnail)
 
-    def load_images(self):
+    def load_amiibo_series(self):
         response = requests.get('https://www.amiiboapi.com/api/amiibo/')
         amiibo_data = json.loads(response.text)
         self.amiibo_images = amiibo_data['amiibo']
@@ -103,15 +103,13 @@ class AmiiboApp(QMainWindow):
         for series in sorted(amiibo_series):
             self.amiibo_series_filter.addItem(series)
 
-        self.apply_filters()
-
     def apply_filters(self):
         self.image_list.clear()
         search_query = self.search_entry.text().strip().lower()
         amiibo_series_filter = self.amiibo_series_filter.currentText()
 
         if amiibo_series_filter == "Select Amiibo Series":
-            amiibo_series_filter = None
+            return
 
         for index, amiibo in enumerate(self.amiibo_images):
             if search_query and search_query not in amiibo['name'].lower():
