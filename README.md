@@ -6,7 +6,7 @@ This project contains two Python applications for creating ready-to-print PDFs o
 ![Alt text](https://imgur.com/kKbns51.png "a title")
 
 #I made a QT version for windows users available in the release section
-![Alt text]([https://imgur.com/kKbns51](https://imgur.com/SDKrO3Q).png "a title")
+![Alt text](https://imgur.com/SDKrO3Q.png "a title")
 
 Linux users can now use the install script in the release section
 
