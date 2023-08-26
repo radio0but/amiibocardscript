@@ -11,9 +11,8 @@ Linux users can now use the install script in the release section
 Make sure you have python 3 installed and configured in the path environement variable as python.exe
 ![Alt text](https://imgur.com/SDKrO3Q.png "a title")
 
-Linux users can now use the install script in the release section
 
-## Installation
+## Installation from source
 
 ### Windows
 
