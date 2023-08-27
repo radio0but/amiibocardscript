@@ -19,7 +19,7 @@
     <property name="title" translatable="yes">Amiibo Card Print Preparation</property>
     <property name="resizable">False</property>
     <property name="icon-name">printer</property>
-    <property name="decorated">False</property>
+    <property name="decorated">True</property>
     <property name="show-menubar">False</property>
     <child>
       <object class="GtkBox">
