@@ -10,8 +10,10 @@ Simply download and run installer.sh. This will install the software on your sys
 In most desktop environments (DEs), the amiiboGenerator app will be visible in the utility section of your application menu.
 You can also launch the app using the amiiboGenerator command in the terminal.
 
-![Alt text](https://imgur.com/LImBoSo.png "a title")
-![Alt text](https://imgur.com/kKbns51.png "a title")
+Thats the default GTK version
+![Alt text](https://imgur.com/nQY6PUi.png "GTK Version on Linux")
+Thats the Qt Version The print button in the Start App only work on windows
+![Alt text](https://imgur.com/Z7lUjqi.png "Qt Version on Linux")
 
 ### For Windows Users:
 
