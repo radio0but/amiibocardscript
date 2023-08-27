@@ -42,14 +42,14 @@
           <widget class="QLabel" name="label_2">
            <property name="font">
             <font>
-             <family>URW Bookman [UKWN]</family>
-             <pointsize>16</pointsize>
+             <family>TeX Gyre Heros</family>
+             <pointsize>28</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
            <property name="text">
-            <string>Cards Print Preperation</string>
+            <string>Print Preparation</string>
            </property>
           </widget>
          </item>
@@ -61,9 +61,19 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
+       <widget class="QLabel" name="preview_label"/>
+      </item>
+      <item>
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
          <widget class="QPushButton" name="folder_button">
+          <property name="font">
+           <font>
+            <pointsize>16</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
           <property name="text">
            <string>Select Folder</string>
           </property>
@@ -73,15 +83,49 @@
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
            <widget class="QRadioButton" name="horizontal_button">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
             <property name="text">
-             <string>Horizontal</string>
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>HorizontalButton.png</normaloff>HorizontalButton.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>128</width>
+              <height>128</height>
+             </size>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QRadioButton" name="vertical_button">
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
             <property name="text">
-             <string>Vertical</string>
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>VerticalButton.png</normaloff>VerticalButton.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>128</width>
+              <height>128</height>
+             </size>
             </property>
            </widget>
           </item>
@@ -89,6 +133,13 @@
         </item>
         <item>
          <widget class="QPushButton" name="preview_button">
+          <property name="font">
+           <font>
+            <pointsize>16</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
           <property name="text">
            <string>Preview</string>
           </property>
@@ -96,6 +147,13 @@
         </item>
         <item>
          <widget class="QPushButton" name="process_button">
+          <property name="font">
+           <font>
+            <pointsize>16</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
           <property name="text">
            <string>Generate PDF</string>
           </property>
@@ -104,25 +162,38 @@
        </layout>
       </item>
       <item>
-       <widget class="QLabel" name="preview_label"/>
-      </item>
-      <item>
-       <widget class="QLabel" name="label_3">
-        <property name="text">
-         <string>Select a folder containing the 9 Amiibo cards pngs. 
-Name the files like this: 
-image1.png, image2.png, image3...
-
-Make sure your cards are in the correct horientation 
-By checking the apropriate horientation and pressing 
-&quot;preview&quot;
-
-Press &quot;generate&quot; to create a PDF in the selected folder
-
-This app will only work for 5,44cm x 8,55cm NFC cards
-
-Go on Amiibodoctor.com for instruction on how to 
-program the nfc cards</string>
+       <widget class="QTextBrowser" name="textBrowser">
+        <property name="minimumSize">
+         <size>
+          <width>300</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>600</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="html">
+         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;Instructions&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Noto Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;h2 style=&quot; margin-top:20px; margin-bottom:12px; margin-left:20px; margin-right:20px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial','sans-serif'; font-size:x-large; font-weight:600; color:#2c3e50;&quot;&gt;Instructions:&lt;/span&gt;&lt;/h2&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:15px; margin-left:20px; margin-right:20px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial','sans-serif'; font-size:16pt;&quot;&gt;For a smooth experience, please adhere to the following steps: &lt;/span&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:'Arial','sans-serif'; font-size:16pt;&quot; style=&quot; margin-top:12px; margin-bottom:0px; margin-left:40px; margin-right:20px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Select a folder containing the 9 Amiibo card PNG images. &lt;/li&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:12px; margin-bottom:0px; margin-left:40px; margin-right:20px; -qt-block-indent:1; text-indent:0px; font-family:'Arial','sans-serif'; font-size:16pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;li style=&quot; font-family:'Arial','sans-serif'; font-size:16pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:40px; margin-right:20px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Name the files sequentially: image1.png, image2.png, image3.png, and so forth.&lt;/li&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:40px; margin-right:20px; -qt-block-indent:1; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial','sans-serif'; font-size:16pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;li style=&quot; font-family:'Arial','sans-serif'; font-size:16pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:40px; margin-right:20px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;If you've used the Launcher app and followed its steps, there's no need to choose a folder. The Amiibo Print Preparation app will automatically use the default directory where the Amiibo Downloader App has saved and renamed the images. &lt;/span&gt;&lt;/li&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:40px; margin-right:20px; -qt-block-indent:1; text-indent:0px; font-family:'Arial','sans-serif'; font-size:16pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:'Arial','sans-serif'; font-size:16pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:40px; margin-right:20px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Confirm the correct orientation and click &amp;quot;Preview&amp;quot;. &lt;/li&gt;&lt;/ul&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:40px; margin-right:20px; -qt-block-indent:1; text-indent:0px; font-family:'Arial','sans-serif'; font-size:16pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;li style=&quot; font-family:'Arial','sans-serif'; font-size:16pt;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:40px; margin-right:20px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ensure your cards are oriented correctly. &lt;/li&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:40px; margin-right:20px; -qt-block-indent:1; text-indent:0px; font-family:'Arial','sans-serif'; font-size:16pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;li style=&quot; font-family:'Arial','sans-serif'; font-size:16pt;&quot; style=&quot; margin-top:0px; margin-bottom:20px; margin-left:40px; margin-right:20px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Click &amp;quot;Generate&amp;quot; to create a PDF in the designated directory. &lt;/li&gt;&lt;/ul&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:15px; margin-left:20px; margin-right:20px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial','sans-serif'; font-size:16pt; font-weight:600; color:#e74c3c;&quot;&gt;Note:&lt;/span&gt;&lt;span style=&quot; font-family:'Arial','sans-serif'; font-size:16pt;&quot;&gt; This application only supports NFC cards measuring 5.44cm x 8.55cm. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
       </item>
