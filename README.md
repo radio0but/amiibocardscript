@@ -2,13 +2,23 @@
 
 This project contains two Python applications for creating ready-to-print PDFs of Amiibo cards. It includes `AmiiboCardsDownloader.py` for downloading and selecting images and `AmiiboCardsPrintPrep.py` for generating the final PDF file. This project uses AmiiboAPI for data. The AmiiboCardsPrintPrep.py is specifically calibrated for NFC cards 5.44cm x 8.55cm tested on an HP DeskJet 3630 printer.
 
-Linux users can now use the install script in the release section
+Making amiibo cards sticker is now more straightforward, thanks to a new startup script that guides users through the process.
+
+### For Linux Users:
+
+Simply download and run installer.sh. This will install the software on your system.
+In most desktop environments (DEs), the amiiboGenerator app will be visible in the utility section of your application menu.
+You can also launch the app using the amiiboGenerator command in the terminal.
 
 ![Alt text](https://imgur.com/LImBoSo.png "a title")
 ![Alt text](https://imgur.com/kKbns51.png "a title")
 
-#I made a QT version for windows users available in the release section as windows installer. 
-Make sure you have python 3 installed and configured in the path environement variable as python.exe
+### For Windows Users:
+
+I've provided a Windows installer named AmiiboCardGeneratorSuite_Install.exe.
+This version utilizes QT, which offers a smoother experience on Windows.
+Please ensure that Python is installed on your system. Also, make sure it's correctly configured in the Path as python.exe.
+
 ![Alt text](https://imgur.com/SDKrO3Q.png "a title")
 
 
