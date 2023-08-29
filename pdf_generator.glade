@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.38.2 -->
+<!-- Generated with glade 3.40.0 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
   <object class="GtkImage" id="HorImg">
@@ -19,7 +19,6 @@
     <property name="title" translatable="yes">Amiibo Card Print Preparation</property>
     <property name="resizable">False</property>
     <property name="icon-name">printer</property>
-    <property name="decorated">True</property>
     <property name="show-menubar">False</property>
     <child>
       <object class="GtkBox">
@@ -32,21 +31,40 @@
             <property name="can-focus">False</property>
             <property name="orientation">vertical</property>
             <child>
-              <object class="GtkLabel">
+              <object class="GtkBox">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="margin-left">50</property>
-                <property name="margin-top">13</property>
-                <property name="label" translatable="yes">Amiibo Card Print preparation</property>
-                <attributes>
-                  <attribute name="font-desc" value="TeX Gyre Adventor Bold 26"/>
-                  <attribute name="weight" value="bold"/>
-                </attributes>
+                <child>
+                  <object class="GtkImage">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="pixbuf">Amiibo_logo.png</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Cards Print Preparation</property>
+                    <attributes>
+                      <attribute name="font-desc" value="Sans Bold 20"/>
+                    </attributes>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
               </object>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">True</property>
-                <property name="padding">10</property>
                 <property name="position">0</property>
               </packing>
             </child>

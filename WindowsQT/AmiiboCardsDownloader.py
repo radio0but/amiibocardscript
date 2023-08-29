@@ -43,7 +43,7 @@ class AmiiboApp(QMainWindow):
 
     def __init__(self):
         super().__init__()
-        self.setWindowTitle('Amiibo App')
+        self.setWindowTitle('Amiibo Cards Downloader App')
         self.setGeometry(100, 100, 800, 600)
         self.selected_images = []
         self.amiibo_images = []
@@ -52,6 +52,19 @@ class AmiiboApp(QMainWindow):
         main_layout = QVBoxLayout()
         filter_layout = QHBoxLayout()
         main_widget = QWidget()
+        # Logo and Title Label
+        logo_title_layout = QHBoxLayout()
+        logo_pixmap = QPixmap("Amiibo_logo.png")
+        logo_label = QLabel()
+        logo_label.setPixmap(logo_pixmap)
+        title_label = QLabel("Cards Downloader")
+        font = title_label.font()
+        font.setPointSize(20)
+        title_label.setFont(font)
+        logo_title_layout.addWidget(logo_label)
+        logo_title_layout.addWidget(title_label)
+
+        main_layout.addLayout(logo_title_layout)
 
         self.search_entry = QLineEdit()
         self.search_entry.setPlaceholderText("Search by Amiibo Name")

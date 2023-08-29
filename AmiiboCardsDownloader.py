@@ -1,6 +1,6 @@
 import gi
 gi.require_version('Gtk', '3.0')
-from gi.repository import Gtk, GdkPixbuf, GLib
+from gi.repository import Gtk, GdkPixbuf, GLib, Pango
 import requests
 import json
 import threading
@@ -50,6 +50,28 @@ class AmiiboApp(Gtk.Application):
 
         main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.window.add(main_box)
+
+
+        # Start - Logo and Label code
+        logo_label_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
+        main_box.pack_start(logo_label_box, False, False, 10)
+
+        logo_pixbuf = GdkPixbuf.Pixbuf.new_from_file("Amiibo_logo.png")
+        logo_image = Gtk.Image.new_from_pixbuf(logo_pixbuf)
+        logo_label_box.pack_start(logo_image, False, False, 0)
+
+        title_label = Gtk.Label("Cards Downloader")
+        title_label.set_size_request(300, 0)  # Optionally, you can set a specific width for the label.
+
+        # Change the font size with Pango
+        font_desc = title_label.get_pango_context().get_font_description()
+        font_desc.set_size(18 * Pango.SCALE)
+        title_label.modify_font(font_desc)
+
+        logo_label_box.pack_start(title_label, False, False, 0)
+        # End - Logo and Label code
+
+
 
         filter_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         main_box.pack_start(filter_box, False, False, 5)

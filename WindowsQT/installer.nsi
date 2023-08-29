@@ -2,6 +2,8 @@
 !include "MUI2.nsh"
 !include "FileFunc.nsh"
 
+Icon "C:\Users\uldarik\Documents\WindowsQT\icon.ico"
+
 ; The name of the installer and its properties
 Outfile "AmiiboCardGeneratorSuite_Install.exe"
 Name "Amiibo Card Generator Suite QT"
@@ -27,7 +29,10 @@ Section "Main Program"
     File /r "C:\Users\uldarik\Documents\WindowsQT\*.*"
 
     ; Create a shortcut on the desktop
-    CreateShortCut "$DESKTOP\Amiibo Card Generator Suite.lnk" "$INSTDIR\launcher.exe"
+    CreateShortCut "$DESKTOP\Amiibo Cards Generator Suite.lnk" "$INSTDIR\launcher.exe" "" "$INSTDIR\icon.ico"
+    WriteUninstaller "$INSTDIR\Uninstaller.exe"
+
+
 
     ; Run Python commands to install required packages
     Exec "python.exe -m pip install --upgrade pip"
@@ -41,21 +46,25 @@ Section /o "Start Menu Shortcut"
 
     ; Create a Start Menu entry
     CreateDirectory "$SMPROGRAMS\${STARTMENUNAME}"
-    CreateShortCut "$SMPROGRAMS\${STARTMENUNAME}\Amiibo Card Generator Suite.lnk" "$INSTDIR\launcher.exe"
+    CreateShortCut "$SMPROGRAMS\${STARTMENUNAME}\Amiibo Cards Generator Suite.lnk" "$INSTDIR\launcher.exe" "" "$INSTDIR\icon.ico"
+    CreateShortCut "$SMPROGRAMS\${STARTMENUNAME}\Uninstall Amiibo Cards Generator Suite.lnk" "$INSTDIR\Uninstaller.exe"
 
 SectionEnd
 
 ; Uninstaller Section
 Section "Uninstall"
 
+    
     ; Remove the desktop shortcut
-    Delete "$DESKTOP\Amiibo Card Generator Suite.lnk"
+    Delete "$DESKTOP\Amiibo Cards Generator Suite.lnk"
 
     ; Remove Start Menu entry
-    Delete "$SMPROGRAMS\${STARTMENUNAME}\Amiibo Card Generator Suite.lnk"
+    Delete "$SMPROGRAMS\${STARTMENUNAME}\Amiibo Cards Generator Suite.lnk"
     RMDir "$SMPROGRAMS\${STARTMENUNAME}"
 
     ; Remove files
     RMDir /r "$INSTDIR"
+    Delete "$INSTDIR\Uninstaller.exe"
+
 
 SectionEnd
