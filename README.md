@@ -11,9 +11,9 @@ In most desktop environments (DEs), the amiiboGenerator app will be visible in t
 You can also launch the app using the amiiboGenerator command in the terminal.
 
 Thats the default GTK version
-![Alt text](https://imgur.com/nQY6PUi.png "GTK Version on Linux")
+![Alt text](https://imgur.com/XF4Vori.png "GTK Version on Linux")
 Thats the Qt Version The print button in the Start App only work on windows
-![Alt text](https://imgur.com/Z7lUjqi.png "Qt Version on Linux")
+![Alt text](https://imgur.com/OGzC8Vu.png "Qt Version on Linux")
 
 ### For Windows Users:
 
