@@ -12,14 +12,8 @@
     <property name="can-focus">False</property>
     <property name="pixbuf">VerticalButton.png</property>
   </object>
-  <object class="GtkApplicationWindow" id="window1">
+  <object class="GtkBox" id="window1">
     <property name="can-focus">False</property>
-    <property name="halign">center</property>
-    <property name="valign">center</property>
-    <property name="title" translatable="yes">Amiibo Card Print Preparation</property>
-    <property name="resizable">False</property>
-    <property name="icon-name">printer</property>
-    <property name="show-menubar">False</property>
     <child>
       <object class="GtkBox">
         <property name="visible">True</property>
@@ -216,108 +210,6 @@
                 <property name="position">4</property>
               </packing>
             </child>
-            <child>
-              <object class="GtkExpander" id="Instructions">
-                <property name="visible">True</property>
-                <property name="can-focus">True</property>
-                <property name="margin-left">50</property>
-                <property name="spacing">7</property>
-                <child>
-                  <object class="GtkLabel">
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
-                    <property name="margin-left">25</property>
-                    <property name="margin-top">25</property>
-                    <property name="label" translatable="yes">Select a folder containing the 9 Amiibo cards pngs. 
-Name the files like this: 
-image1.png, image2.png, image3...
-
-Make sure your cards are in the correct horientation 
-By checking the apropriate horientation and pressing 
-"preview"
-
-Press "generate" to create a PDF in the selected folder
-
-This app will only work for 5,44cm x 8,55cm NFC cards
-
-Go on Amiibodoctor.com for instruction on how to 
-program the nfc cards</property>
-                    <attributes>
-                      <attribute name="font-desc" value="Bravura Text Bold 13"/>
-                    </attributes>
-                  </object>
-                </child>
-                <child type="label">
-                  <object class="GtkLabel">
-                    <property name="visible">True</property>
-                    <property name="can-focus">False</property>
-                    <property name="label" translatable="yes">Instructions</property>
-                  </object>
-                </child>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">5</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkBox">
-                <property name="visible">True</property>
-                <property name="can-focus">False</property>
-                <property name="margin-left">50</property>
-                <child>
-                  <object class="GtkLinkButton">
-                    <property name="label" translatable="yes">Buy NFC Card on Amazon</property>
-                    <property name="visible">True</property>
-                    <property name="can-focus">True</property>
-                    <property name="receives-default">True</property>
-                    <property name="relief">none</property>
-                    <property name="uri">https://www.amazon.ca/gp/product/B091FBLYKK/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&amp;th=1</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">0</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLinkButton" id="AmiiboLifeButton">
-                    <property name="label" translatable="yes">Find Cards Images on amiibo.life</property>
-                    <property name="visible">True</property>
-                    <property name="can-focus">True</property>
-                    <property name="receives-default">True</property>
-                    <property name="relief">none</property>
-                    <property name="uri">https://amiibo.life</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">1</property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLinkButton">
-                    <property name="label" translatable="yes">AmiiboDoctor</property>
-                    <property name="visible">True</property>
-                    <property name="can-focus">True</property>
-                    <property name="receives-default">True</property>
-                    <property name="relief">none</property>
-                    <property name="uri">https://amiibodoctor.com</property>
-                  </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">2</property>
-                  </packing>
-                </child>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">6</property>
-              </packing>
-            </child>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -340,6 +232,11 @@ program the nfc cards</property>
           </packing>
         </child>
       </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">0</property>
+      </packing>
     </child>
   </object>
 </interface>
