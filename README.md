@@ -21,7 +21,7 @@ I've provided a Windows installer named AmiiboCardGeneratorSuite_Install.exe.
 This version utilizes QT, which offers a smoother experience on Windows.
 Please ensure that Python is installed on your system. Also, make sure it's correctly configured in the Path as python.exe.
 
-![Alt text](https://imgur.com/SDKrO3Q.png "Qt Version on Windows")
+![Alt text](https://imgur.com/Jp1aKdv.png "Qt Version on Windows")
 
 
 ## Installation from source
