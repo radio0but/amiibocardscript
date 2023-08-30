@@ -8,10 +8,12 @@ Making amiibo cards sticker is now more straightforward, thanks to a new startup
 
 Simply download and run installer.sh. This will install the software on your system.
 In most desktop environments (DEs), the amiiboGenerator app will be visible in the utility section of your application menu.
-You can also launch the app using the amiiboGenerator command in the terminal.
+
+The App gets installed in the user's home directory because the app is moving creating deleting file in its folder. It needs too much permissions to be in a System folder.
 
 Thats the default GTK version
 ![Alt text](https://imgur.com/XF4Vori.png "GTK Version on Linux")
+
 Thats the Qt Version The print button in the Start App only work on windows
 ![Alt text](https://imgur.com/OGzC8Vu.png "Qt Version on Linux")
 
@@ -19,12 +21,15 @@ Thats the Qt Version The print button in the Start App only work on windows
 
 I've provided a Windows installer named AmiiboCardGeneratorSuite_Install.exe.
 This version utilizes QT, which offers a smoother experience on Windows.
-Please ensure that Python is installed on your system. Also, make sure it's correctly configured in the Path as python.exe.
+Please ensure that Python is installed on your system. Also, make sure it's correctly configured in the Path as python.exe. 
+
+The App as to be installed in the user's directory because the app is moving creating 
+ and deleting file in its folder. It needs too much permissions to be in a System folder.
 
 ![Alt text](https://imgur.com/Jp1aKdv.png "Qt Version on Windows")
 
 
-## Installation from source
+## Installation from source (GTK Version)
 
 ### Windows
 
@@ -86,6 +91,70 @@ brew install python gtk+3 pygobject3
 ```bash
 pip install requests pillow
 ```
+
+## Installation from source (Qt Version)
+
+### Windows
+
+These instructions are for executing the Qt version on Windows for advanced users. If unsure, use the available installer. 
+
+1. Install Python from [the official website](https://www.python.org/downloads/).
+2. Install PySide6 and other required packages:
+
+```bash
+pip install PySide6 requests pillow
+```
+
+### Ubuntu/Fedora
+
+1. Install Python and necessary Qt dependencies:
+
+```bash
+sudo apt-get install python3 python3-pip qttools5-dev-tools # Ubuntu
+sudo dnf install python3 python3-pip qt5-qttools-devel # Fedora
+```
+
+2. Install Python dependencies:
+
+```bash
+pip3 install PySide6 requests pillow
+```
+
+### Arch
+
+1. Install Python and necessary Qt dependencies:
+
+```bash
+sudo pacman -S python-pip qt5-tools
+```
+
+2. Install Python dependencies:
+
+```bash
+pip install PySide6 requests pillow
+```
+
+### MacOS
+
+1. Install Homebrew if you don't have it:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+2. Install Python and necessary Qt tools:
+
+```bash
+brew install python pyqt@5
+```
+
+3. Install Python dependencies:
+
+```bash
+pip install PySide6 requests pillow
+```
+
+
 ## Usage
 
 1. **Downloading and Selecting Images**: Run `AmiiboCardsDownloader.py` to download and select 9 images.
