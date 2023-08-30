@@ -12,7 +12,7 @@ In most desktop environments (DEs), the amiiboGenerator app will be visible in t
 The App gets installed in the user's home directory because the app is moving creating deleting file in its folder. It needs too much permissions to be in a System folder.
 
 Thats the GTK version This is the default version for linux (install.sh)
-![Alt text](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGtmeHloZThwMno3ZTlyZml1amFtdG5ueWpycGgwdjU0OTVpMzl5NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Cvo1tA2AG5ZLxDgt1u/giphy-downsized-large.gif "GTK Version on Linux")
+![Alt text](https://imgur.com/Vx2KVhD.gif "GTK Version on Linux")
 
 Thats the Qt Version on linux if you ran the script(install.sh) you should be able to find it in /home/"your-user-name"/amiiboGenerator/WindowsQT/ refer to **Installation from source (Qt Version)** for dependency install. Note that the print button in the launcher App(start.py) only works on windows.
 ![Alt text](https://imgur.com/OGzC8Vu.png "Qt Version on Linux")
