@@ -103,3 +103,21 @@ python AmiiboCardsPrintPrep.py
 ```
 
 Choose the orientation, preview, and generate the PDF; the images will be stretched to fill the card. If you did not use AmiiboCardsDownloader.py and downloaded the images manually, you can select the folder containing them. Ensure you have named the images as image1.png, image2.png, etc.
+
+
+
+# Terms & Conditions
+
+By using the **Amiibo Cards Generator Suite** (hereinafter referred to as the "App"), you hereby accept the following terms and conditions:
+
+- The App, **Amiibo Cards Generator Suite**, has no affiliation with Nintendo, amiiboAPI, or any other companies that own the rights to them.
+  
+- Reports or information collected by Nintendo, amiiboAPI, or the respective companies that own the rights are not our responsibility.
+
+- The user agrees that the use of this App is entirely at the user’s own risk.
+
+- You will require your end users to comply with (and not knowingly enable them to violate) applicable law, regulation, and these Terms.
+
+- You will comply with all applicable laws, regulations, and third-party rights (including, without limitation, laws regarding the import or export of data or software, privacy, and local laws). You will not use the App to encourage or promote illegal activity or violation of third-party rights.
+
+- These Terms and Conditions are subject to change without notice, from time to time, in our sole discretion.
