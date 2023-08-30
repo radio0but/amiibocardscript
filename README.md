@@ -28,6 +28,35 @@ The App as to be installed in the user's directory because the app is moving cre
 
 ![Alt text](https://imgur.com/Jp1aKdv.png "Qt Version on Windows")
 
+## Adding Python and pip to PATH on Windows
+
+1. First, ensure that Python is installed. If not, download the installer from [the official website](https://www.python.org/downloads/).
+   
+   **Note**: During the installation of Python, there's an option at the bottom of the installation window that says "Add Python to PATH." If you select this, you can skip the manual steps below.
+
+2. If you've already installed Python without adding it to PATH, follow these steps:
+
+   a. Open the `Start` menu, type `Environment Variables`, and select `Edit the system environment variables`.
+   
+   b. In the `System Properties` window, click the `Environment Variables` button.
+   
+   c. Under `User variables` or `System variables`, find the `PATH` variable and select it. Click the `Edit` button.
+   
+   d. In the `Edit Environment Variable` window, click the `New` button and paste in the path to your Python's directory (typically `C:\PythonXX`, where `XX` is the version number, like `C:\Python39`).
+   
+   e. Click `New` again and add the path to the `Scripts` directory inside your Python directory (typically `C:\PythonXX\Scripts`).
+   
+   f. Click `OK` to close each of the windows.
+
+3. To verify that Python and pip are now part of your PATH, open a new command prompt and type:
+
+```bash
+python.exe --version
+pip.exe --version
+```
+
+You should see the versions of Python and pip displayed. If not, ensure that you've added the correct paths in step 2.
+
 
 ## Installation from source (GTK Version)
 
