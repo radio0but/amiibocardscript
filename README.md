@@ -2,7 +2,7 @@
 
 This project contains two Python applications for creating ready-to-print PDFs of Amiibo cards. It includes `AmiiboCardsDownloader.py` for downloading and selecting images and `AmiiboCardsPrintPrep.py` for generating the final PDF file. This project uses AmiiboAPI for data. The AmiiboCardsPrintPrep.py is specifically calibrated for NFC cards 5.44cm x 8.55cm tested on an HP DeskJet 3630 printer.
 
-Making amiibo cards sticker is now more straightforward, thanks to a new startup script that guides users through the process.
+Making amiibo cards sticker is now more straightforward, thanks to a new launcher script(start.py) that guides users through the process.
 
 ### For Linux Users:
 
@@ -11,10 +11,10 @@ In most desktop environments (DEs), the amiiboGenerator app will be visible in t
 
 The App gets installed in the user's home directory because the app is moving creating deleting file in its folder. It needs too much permissions to be in a System folder.
 
-Thats the default GTK version
+Thats the GTK version This is the default version for linux (install.sh)
 ![Alt text](https://imgur.com/XF4Vori.png "GTK Version on Linux")
 
-Thats the Qt Version The print button in the Start App only work on windows
+Thats the Qt Version on linux refer to **Installation from source (Qt Version)** for dependency install. Note that the print button in the launcher App(start.py) only works on windows.
 ![Alt text](https://imgur.com/OGzC8Vu.png "Qt Version on Linux")
 
 ### For Windows Users:
