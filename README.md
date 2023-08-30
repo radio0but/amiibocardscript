@@ -2,6 +2,8 @@
 
 This project contains two Python applications for creating ready-to-print PDFs of Amiibo cards. It includes `AmiiboCardsDownloader.py` for downloading and selecting images and `AmiiboCardsPrintPrep.py` for generating the final PDF file. This project uses AmiiboAPI for data. The AmiiboCardsPrintPrep.py is specifically calibrated for NFC cards 5.44cm x 8.55cm tested on an HP DeskJet 3630 printer.
 
+Big new the GTK version is no a one window application !!!!!
+
 Making amiibo cards sticker is now more straightforward, thanks to a new launcher script(start.py) that guides users through the process.
 
 ### For Linux Users:
@@ -188,21 +190,11 @@ pip install PySide6 requests pillow
 
 ## Usage
 
-1. **Downloading and Selecting Images**: Run `AmiiboCardsDownloader.py` to download and select 9 images.
-
+1. Start the launcher(Qt) or Main app(GTK) with the folowing command
 ```bash
-python AmiiboCardsDownloader.py
+python start.py
 ```
 
-Select 9 images by clicking on them and click the download button when they are chosen. You can find them more quickly by filtering by Series or by name using the search bar. The application is still unstable as there are many amiibo to load. The filter function cannot filter the images until everything is downloaded.
-
-2. **PDF Creation**: Run `AmiiboCardsPrintPrep.py` to open the PDF creation interface.
-
-```bash
-python AmiiboCardsPrintPrep.py
-```
-
-Choose the orientation, preview, and generate the PDF; the images will be stretched to fill the card. If you did not use AmiiboCardsDownloader.py and downloaded the images manually, you can select the folder containing them. Ensure you have named the images as image1.png, image2.png, etc.
 
 
 
