@@ -18,7 +18,7 @@ Thats the GTK version This is the default version for linux (install.sh)
 ![](AmiiboGen.GIF)
 
 
-Thats the Qt Version on linux if you ran the script(install.sh) you should be able to find it in /home/"your-user-name"/amiiboGenerator/WindowsQT/ refer to **Installation from source (Qt Version)** for dependency install. Note that the print button in the launcher App(start.py) only works on windows.
+Thats the Qt Version on linux
 ![Alt text](https://imgur.com/OGzC8Vu.png "Qt Version on Linux")
 
 ### For Windows Users:
