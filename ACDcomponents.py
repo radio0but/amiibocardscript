@@ -1,6 +1,6 @@
 import gi
 gi.require_version('Gtk', '3.0')
-from gi.repository import Gtk, Pango
+from gi.repository import Gtk
 
 class ThumbnailBox(Gtk.Box):
     def __init__(self, image_data, name, series, character, amiibo_type):
