@@ -1,7 +1,7 @@
 import os
 import subprocess
 from PIL import Image
-from PySide6.QtWidgets import (QApplication, QMainWindow, QFileDialog, QMessageBox)
+from PySide6.QtWidgets import (QApplication, QWidget, QFileDialog, QMessageBox)
 from PySide6.QtGui import QPixmap
 from PySide6.QtCore import Qt, QThread, Signal
 from PySide6.QtUiTools import QUiLoader
@@ -58,13 +58,13 @@ class PDFGeneratorThread(QThread):
 
         self.pdf_created.emit(output_path)
 
-class PDFGeneratorApp(QMainWindow):
+class PDFGeneratorApp(QWidget):  # Change from QMainWindow to QWidget
     def __init__(self):
         super().__init__()
 
         loader = QUiLoader()
         self.ui = loader.load("PDFGeneratorUI.ui", self)
-        self.setCentralWidget(self.ui.centralwidget)
+        self.setLayout(self.ui.verticalLayout)  # Set layout directly on the widget
 
         self.default_folder = os.path.join(os.path.dirname(os.path.realpath(__file__)), "amiibo")
         if not os.path.exists(self.default_folder):

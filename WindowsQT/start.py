@@ -1,42 +1,41 @@
-import subprocess
+import sys
 import os
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox
-from PySide6.QtUiTools import QUiLoader
+from PySide6.QtWidgets import QApplication, QMainWindow, QTabWidget, QLabel, QWidget
+from PySide6.QtGui import QIcon
 
-class MyWindow(QMainWindow):
+# You will need to convert these modules to use Qt (PySide6) as well
+from AmiiboCardsDownloader import AmiiboApp
+from AmiiboCardsPrintPrep import PDFGeneratorApp
+from instruction import Instructions
+from print import PrintButton
+
+# Main Application Window
+class ParentApp(QMainWindow):
     def __init__(self):
         super().__init__()
+        self.setWindowTitle("Amiibo Cards Generator Suite")
+        self.setGeometry(100, 100, 800, 600) # X, Y, Width, Height
+        
+        # Set the window icon
+        icon_path = "icon.png"
+        if os.path.exists(icon_path):
+            self.setWindowIcon(QIcon(icon_path))
+        
+        self.tabWidget = QTabWidget()
+        self.setCentralWidget(self.tabWidget)
+        
+        # Assuming the imported components are now QWidget-derived in Qt
+        app_one = AmiiboApp()
+        app_two = PDFGeneratorApp()
+        app_three = PrintButton()
+        app_four = Instructions()
 
-        # Load UI from .ui file
-        loader = QUiLoader()
-        self.ui = loader.load("start.ui", self)
-        self.setCentralWidget(self.ui.centralwidget)
+        self.tabWidget.addTab(app_one, "Step 1: Cards Downloader")
+        self.tabWidget.addTab(app_two, "Step 2: PDF Generator")
+        self.tabWidget.addTab(app_three, "Step 3: Print")
+        self.tabWidget.addTab(app_four, "Instructions")
 
-        # Connect buttons to functions
-        self.ui.download_button.clicked.connect(self.on_downloader_button_clicked)
-        self.ui.printprep_button.clicked.connect(self.on_printprep_button_clicked)
-        self.ui.print_button.clicked.connect(self.on_print_button_clicked)
-
-    def on_downloader_button_clicked(self):
-        subprocess.Popen(["python", "AmiiboCardsDownloader.py"])
-
-    def on_printprep_button_clicked(self):
-        subprocess.Popen(["python", "AmiiboCardsPrintPrep.py"])
-
-    def on_print_button_clicked(self):
-        output_path = os.path.join("amiibo", "output.pdf")
-        if not os.path.exists(output_path):
-            dialog = QMessageBox(self)
-            dialog.setIcon(QMessageBox.Critical)
-            dialog.setWindowTitle("File Not Found")
-            dialog.setText(f"The file {output_path} does not exist.")
-            dialog.setStandardButtons(QMessageBox.Cancel)
-            dialog.exec_()
-        else:
-            os.startfile(output_path)
-
-if __name__ == "__main__":
-    app = QApplication()
-    window = MyWindow()
-    window.show()
-    app.exec_()
+app = QApplication(sys.argv)
+window = ParentApp()
+window.show()
+sys.exit(app.exec_())

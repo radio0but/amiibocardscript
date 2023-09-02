@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PrintButtonWidget</class>
+ <widget class="QWidget" name="PrintButtonWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>925</width>
+    <height>672</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QPushButton" name="print_button">
+     <property name="styleSheet">
+      <string notr="true">font: 87 16pt &quot;Noto Sans CJK HK Black&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Print (Linux)</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>printprep_icon.png</normaloff>printprep_icon.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>200</width>
+       <height>200</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="pdf_button">
+     <property name="styleSheet">
+      <string notr="true">font: 87 16pt &quot;Noto Sans CJK HK Black&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Open PDF (Linux)</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>downloader_icon.png</normaloff>downloader_icon.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>200</width>
+       <height>200</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="pdf_win_button">
+     <property name="styleSheet">
+      <string notr="true">font: 87 16pt &quot;Noto Sans CJK HK Black&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Open PDF (Windows)</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>downloader_icon.png</normaloff>downloader_icon.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>200</width>
+       <height>200</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

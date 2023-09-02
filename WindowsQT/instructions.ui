@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>InstructionsWidget</class>
+ <widget class="QWidget" name="InstructionsWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="title_label">
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Instructions</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTextEdit" name="instructions_textedit">
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Noto Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Initiate the Amiibo Download Process:&lt;/span&gt; &lt;br /&gt;&lt;br /&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Click on the &amp;quot;Download&amp;quot; button to launch the Amiibo downloader application.&lt;/span&gt; &lt;br /&gt;&lt;br /&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Within the Amiibo &amp;quot;Step 1: Cards Downloader&amp;quot; Tab:&lt;/span&gt; &lt;br /&gt;&lt;br /&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Select Images:&lt;/span&gt; &lt;br /&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Choose 9 images by clicking on them individually.&lt;/span&gt; &lt;br /&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Confirm your selections by clicking the &amp;quot;Download&amp;quot; button.&lt;/span&gt; &lt;br /&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Utilize the search bar to filter images by Series or name for quicker navigation.&lt;/span&gt; &lt;br /&gt;&lt;br /&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Note: The application may behave unpredictably due to the large number of amiibo available. Please leave time for all the Amiibo to load before changing filters. &lt;/span&gt;&lt;br /&gt;&lt;br /&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Complete the Download:&lt;/span&gt; &lt;br /&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Click &amp;quot;Download&amp;quot; and wait until the button returns to its normal state, indicating the download is complete.&lt;/span&gt; &lt;br /&gt;&lt;br /&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Exit the downloader app by clicking the &amp;quot;x&amp;quot; in the top right corner.&lt;/span&gt; &lt;br /&gt;&lt;br /&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Prepare the Print:&lt;/span&gt; &lt;br /&gt;&lt;br /&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Click the &amp;quot;Step 2: PDF Generator&amp;quot; button to open the Amiibo print preparation Tab.&lt;/span&gt; &lt;br /&gt;&lt;br /&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Within the &amp;quot;Step 2: PDF Generator&amp;quot; Tab:&lt;/span&gt; &lt;br /&gt;&lt;br /&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Configure the Print Settings:&lt;/span&gt; &lt;br /&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Select the desired orientation.&lt;/span&gt; &lt;br /&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Preview the layout.&lt;/span&gt; &lt;br /&gt;&lt;br /&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Generate the PDF, allowing the images to be stretched to fit the cards.&lt;/span&gt; &lt;br /&gt;&lt;br /&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Finalize the Print Prep:&lt;/span&gt; &lt;br /&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Upon successful PDF creation, a message will appear indicating that the process is complete.&lt;/span&gt; &lt;br /&gt;&lt;br /&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Select the &amp;quot;Step 3 : Print&amp;quot; Tab&lt;/span&gt; &lt;br /&gt;&lt;br /&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Print the Cards:&lt;/span&gt; &lt;br /&gt;&lt;br /&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Click on the &amp;quot;Print&amp;quot; button, and the cards will be printed using your default printer.&lt;/span&gt; &lt;br /&gt;&lt;br /&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;By following these steps, you should be able to download, prepare, and print your Amiibo cards seamlessly.&lt;/span&gt; &lt;br /&gt;&lt;br /&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Terms &amp;amp; Conditions&lt;/span&gt; &lt;br /&gt;&lt;br /&gt;By using the Amiibo Cards Generator Suite (hereinafter referred to as the &amp;quot;App&amp;quot;), you hereby accept the following terms and conditions: &lt;br /&gt;&lt;br /&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;The App, Amiibo Cards Generator Suite, has no affiliation with Nintendo, amiiboAPI, or any other companies that own the rights to them.&lt;/span&gt; &lt;br /&gt;&lt;br /&gt;Reports or information collected by Nintendo, amiiboAPI, or the respective companies that own the rights are not our responsibility. &lt;br /&gt;&lt;br /&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;The user agrees that the use of this App is entirely at the user’s own risk.&lt;/span&gt; &lt;br /&gt;&lt;br /&gt;You will require your end users to comply with (and not knowingly enable them to violate) applicable law, regulation, and these Terms. &lt;br /&gt;&lt;br /&gt;You will comply with all applicable laws, regulations, and third-party rights (including, without limitation, laws regarding the import or export of data or software, privacy, and local laws). You will not use the App to encourage or promote illegal activity or violation of third-party rights. These Terms and Conditions are subject to change without notice, from time to time, in our sole discretion. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+     <property name="plainText">
+      <string>Initiate the Amiibo Download Process: 
+
+Click on the &quot;Download&quot; button to launch the Amiibo downloader application. 
+
+Within the Amiibo &quot;Step 1: Cards Downloader&quot; Tab: 
+
+Select Images: 
+Choose 9 images by clicking on them individually. 
+Confirm your selections by clicking the &quot;Download&quot; button. 
+Utilize the search bar to filter images by Series or name for quicker navigation. 
+
+Note: The application may behave unpredictably due to the large number of amiibo available. Please leave time for all the Amiibo to load before changing filters. 
+
+Complete the Download: 
+Click &quot;Download&quot; and wait until the button returns to its normal state, indicating the download is complete. 
+
+Exit the downloader app by clicking the &quot;x&quot; in the top right corner. 
+
+Prepare the Print: 
+
+Click the &quot;Step 2: PDF Generator&quot; button to open the Amiibo print preparation Tab. 
+
+Within the &quot;Step 2: PDF Generator&quot; Tab: 
+
+Configure the Print Settings: 
+Select the desired orientation. 
+Preview the layout. 
+
+Generate the PDF, allowing the images to be stretched to fit the cards. 
+
+Finalize the Print Prep: 
+Upon successful PDF creation, a message will appear indicating that the process is complete. 
+
+Select the &quot;Step 3 : Print&quot; Tab 
+
+Print the Cards: 
+
+Click on the &quot;Print&quot; button, and the cards will be printed using your default printer. 
+
+By following these steps, you should be able to download, prepare, and print your Amiibo cards seamlessly. 
+
+Terms &amp; Conditions 
+
+By using the Amiibo Cards Generator Suite (hereinafter referred to as the &quot;App&quot;), you hereby accept the following terms and conditions: 
+
+The App, Amiibo Cards Generator Suite, has no affiliation with Nintendo, amiiboAPI, or any other companies that own the rights to them. 
+
+Reports or information collected by Nintendo, amiiboAPI, or the respective companies that own the rights are not our responsibility. 
+
+The user agrees that the use of this App is entirely at the user’s own risk. 
+
+You will require your end users to comply with (and not knowingly enable them to violate) applicable law, regulation, and these Terms. 
+
+You will comply with all applicable laws, regulations, and third-party rights (including, without limitation, laws regarding the import or export of data or software, privacy, and local laws). You will not use the App to encourage or promote illegal activity or violation of third-party rights. These Terms and Conditions are subject to change without notice, from time to time, in our sole discretion. </string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
