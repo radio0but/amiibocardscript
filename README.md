@@ -15,11 +15,11 @@ The App gets installed in the user's home directory because the app is moving cr
 
 Thats the GTK version This is the default version for linux (install.sh)
 
-![](AmiiboGen.GIF)
+![](AmiiboGen.gif)
 
 
 Thats the Qt Version on linux
-![](AmiiboGenQt.GIF)
+![](AmiiboGenQt.gif)
 
 ### For Windows Users:
 
