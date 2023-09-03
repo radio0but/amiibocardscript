@@ -2,9 +2,6 @@
 
 Amiibo Cards Generator is a complete solutions to make ready-to-print PDFs of Amiibo cards. Simply use one of the scripts provided that works on most of the major Linux distributions(Fedora,Rhel,Arch,Manjaro,Ubuntu,Debian) or the windows installer to install the software on your system. This project uses AmiiboAPI for data. The AmiiboCardsPrintPrep.py is specifically calibrated for NFC cards 5.44cm x 8.55cm tested on an HP DeskJet 3630 printer.
 
-Big new the GTK version is no a one window application !!!!!
-
-Making amiibo cards sticker is now more straightforward, thanks to a new launcher script(start.py) that guides users through the process.
 
 ### For Linux Users:
 
