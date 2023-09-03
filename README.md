@@ -15,7 +15,7 @@ The App gets installed in the user's home directory because the app is moving cr
 
 Thats the GTK version This is the default version for linux (install.sh)
 
-![](AmiiboGen.gif)
+![](AmiiboGen.GIF)
 
 
 Thats the Qt Version on linux
@@ -31,7 +31,7 @@ Please ensure that Python is installed on your system. Also, make sure it's corr
 The App as to be installed in the user's directory because the app is moving creating 
  and deleting file in its folder. It needs too much permissions to be in a System folder.
 
-![](AmiiboGenQtWin.GIF)
+![](AmiiboGenQtWin.gif)
 
 ## Adding Python and pip to PATH on Windows
 
