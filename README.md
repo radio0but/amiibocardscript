@@ -19,7 +19,7 @@ Thats the GTK version This is the default version for linux (install.sh)
 
 
 Thats the Qt Version on linux
-![Alt text](https://imgur.com/dbXegOD.gif "Qt Version on Linux")
+![](AmiiboGenQt.GIF)
 
 ### For Windows Users:
 
@@ -30,7 +30,7 @@ Please ensure that Python is installed on your system. Also, make sure it's corr
 The App as to be installed in the user's directory because the app is moving creating 
  and deleting file in its folder. It needs too much permissions to be in a System folder.
 
-![Alt text](https://imgur.com/YUwoB16.gif "Qt Version on Windows")
+![](AmiiboGenQtWin.GIF)
 
 ## Adding Python and pip to PATH on Windows
 
