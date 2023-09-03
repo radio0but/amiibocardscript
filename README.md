@@ -19,6 +19,7 @@ Thats the GTK version This is the default version for linux (install.sh)
 
 
 Thats the Qt Version on linux
+
 ![](AmiiboGenQt.gif)
 
 ### For Windows Users:
