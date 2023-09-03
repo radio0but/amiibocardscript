@@ -1,6 +1,6 @@
 # Amiibo Cards Generator Suite
 
-This project contains two Python applications for creating ready-to-print PDFs of Amiibo cards. It includes `AmiiboCardsDownloader.py` for downloading and selecting images and `AmiiboCardsPrintPrep.py` for generating the final PDF file. This project uses AmiiboAPI for data. The AmiiboCardsPrintPrep.py is specifically calibrated for NFC cards 5.44cm x 8.55cm tested on an HP DeskJet 3630 printer.
+Amiibo Cards Generator is a complete solutions to make ready-to-print PDFs of Amiibo cards. Simply use one of the scripts provided that works on most of the major Linux distributions(Fedora,Rhel,Arch,Manjaro,Ubuntu,Debian) or the windows installer to install the software on your system. This project uses AmiiboAPI for data. The AmiiboCardsPrintPrep.py is specifically calibrated for NFC cards 5.44cm x 8.55cm tested on an HP DeskJet 3630 printer.
 
 Big new the GTK version is no a one window application !!!!!
 
@@ -18,7 +18,7 @@ Thats the GTK version This is the default version for linux (install.sh)
 ![](AmiiboGen.GIF)
 
 
-Thats the Qt Version on linux
+Thats the Qt Version on linux (installQt.sh)
 
 ![](AmiiboGenQt.gif)
 
@@ -67,13 +67,13 @@ You should see the versions of Python and pip displayed. If not, ensure that you
 
 ### Windows
 
-these instruction are for executing the GTK version on windows for advance user only otherwize use the Qt version. 
+
+Installing the GTK version on windows is a little bit more involved since GTK is not native to Windows its almost like running linux on Windows. 
 
 1. Install Python from [the official website](https://www.python.org/downloads/).
 2. Install GTK 3 from [this link](https://www.gtk.org/docs/installations/windows/).
 3. Install Python dependencies with the following command:
 
-You might also be able to use WSL
 
 ```bash
 pip install requests pillow PyGObject
